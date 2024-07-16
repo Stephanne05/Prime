@@ -1,0 +1,30 @@
+public class PrimeNumberChecker {
+
+    public static void main(String[] args) {
+        System.out.println("Prime Numbers between 1 and 500:");
+        displayPrimeNumbers(1, 500);
+    }
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void displayPrimeNumbers(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+}
